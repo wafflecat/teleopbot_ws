@@ -15,11 +15,11 @@ from sensor_msgs.msg import Joy
 
 # "joy" callback function
 def joy_cb(msg, twist_pub):
-    # BEGIN CB
+    
     # if len(msg.data) == 0 or not key_mapping.has_key(msg.data[0]):
     #     return # unknown key.
     # vels = key_mapping[msg.data[0]]
-    # END CB
+    
 
     print(str(msg.axes[0]) + " " + str(msg.axes[1]))
 
@@ -37,4 +37,3 @@ if __name__ == '__main__':
     twist_pub = rospy.Publisher('cmd_vel', Twist, queue_size=1)
     rospy.Subscriber('joy', Joy, joy_cb, twist_pub)
     rospy.spin()
-# END ALL
