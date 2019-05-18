@@ -1,0 +1,10 @@
+<launch>
+	<include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch" />
+
+	<node pkg="teleopbot" name="key_publisher" type="key_publisher.py" />
+
+	<node pkg="teleopbot" name="keys_to_twist_using_rate" type="keys_to_twist_using_rate.py">
+		<remap from="cmd_vel" to="cmd_vel_mux/input/teleop" />
+	</node>
+
+</launch>

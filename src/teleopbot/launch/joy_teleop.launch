@@ -1,0 +1,10 @@
+<launch>
+	<include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch" />
+
+	<node pkg="joy" name="joy_node" type="joy_node" />
+
+	<node pkg="teleopbot" name="joy_to_twist" type="joy_to_twist.py">
+		<remap from="cmd_vel" to="cmd_vel_mux/input/teleop" />
+	</node>
+
+</launch>
