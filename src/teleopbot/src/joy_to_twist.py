@@ -4,18 +4,14 @@
 # ----------
 # https://andrewdai.co/xbox-controller-ros.html#rosjoy
 
-
-# BEGIN ALL
 import rospy
 # from std_msgs.msg import String
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import Joy
 
-# BEGIN KEYMAP
 # key_mapping = { 'w': [ 0, 1], 'x': [0, -1], 
 #                 'a': [1, 0], 'd': [-1,  0], 
 #                 's': [ 0, 0] }
-# END KEYMAP
 
 # "joy" callback function
 def joy_cb(msg, twist_pub):
